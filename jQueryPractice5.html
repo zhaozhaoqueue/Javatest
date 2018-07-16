@@ -1,0 +1,89 @@
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+  $("#d1").click(function(){
+    $("#currentDiv").children().toggleClass("border");
+  });
+  $("#d2").click(function(){
+    $("#currentDiv").find("div").toggleClass("border");
+  });
+});
+</script>
+<style>
+div{
+  padding:20px;
+  margin-top:3px;
+}
+.border{
+  border:1px solid black;
+}
+
+</style>
+
+<button id="d1">改变children()边框</button>
+<button id="d2">改变find(selector)边框</button>
+
+<br>
+<div id="currentDiv" style="background:pink">当前元素
+  <div style="background:green">儿子元素1
+    <div id="s" style="background:red">后代元素n</div>
+  </div>
+  <div style="background:green">儿子元素2
+    <div style="background:red">后代元素n</div>
+  </div>
+</div>
+<br>
+<br>
+<script>
+$(function(){
+  $("#b1").click(function(){
+    alert($("#h").attr("align"));
+  });
+  $("#b2").click(function(){
+    alert($("#h").attr("game"));
+  });
+  $("#b3").click(function(){
+    $("#h").attr("align", "right");
+  });
+  $("#b4").click(function(){
+    $("#h").removeAttr("align");
+  })
+})
+</script>
+<button id="b1">get align attribute</button>
+<button id="b2">get game attribute</button>
+<button id="b3">modify align attribute</button>
+<button id="b4">remove attribute</button>
+<h1 align="center" id="h" game="dota">Title in Center</h1>
+<br>
+<script>
+$(function(){
+  $("#b5").click(function(){
+    alert($("#c").attr("game"));
+  });
+  $("#b6").click(function(){
+    alert($("#c").prop("game"));
+  });
+  $("#b7").click(function(){
+    alert($("#c").attr("checked"));
+  });
+  $("#b8").click(function(){
+    alert($("#c").prop("checked"));
+  });
+});
+</script>
+<style>
+button{
+  display:block;
+}
+</style>
+
+<button id="b5">attr get game</button>
+<button id="b6">prop get game</button>
+<button id="b7">attr get checked</button>
+<button id="b8">prop get checked</button>
+<br>
+<div>
+  <input id="c" type="checkbox" align="center" game="dota" checked="checked"/>
+  checked checkbox
+</div>
